@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/calc.cpp"
+#include "../src/calc.h"
 
 TEST(SumTest, BasicTest)
 {
