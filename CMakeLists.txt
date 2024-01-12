@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project("Facebook-Project") # Replace “MyCalc” with your repo name
+project("Facebook-Project")
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -16,13 +16,13 @@ enable_testing()
 
 # Source files
 set(SOURCE_FILES
-        src/calc.cpp # this is where the code we want to test
-        src/calc.h)
+        # this is where the code we want to test
+        src/)
 
 # Test files
 set(TEST_FILES
-        tests/test_main.cpp # this is the main for tests
-        tests/calc_test.cpp # this file contains the tests
+        tests/ # this is the main for tests
+        # this file contains the tests
         )
 
 # Create the test executable
