@@ -17,13 +17,13 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/)
+        src/bloom_filter.cpp src/bloom_filter.h)
 
 # Test files
 set(TEST_FILES
-        tests/ # this is the main for tests
+        # this is the main for tests
         # this file contains the tests
-        )
+        tests/test_main.cpp tests/bf_test.cpp)
 
 # Create the test executable
 add_executable(CalcTests ${TEST_FILES} ${SOURCE_FILES})
