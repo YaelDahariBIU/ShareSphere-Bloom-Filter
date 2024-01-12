@@ -1,6 +1,0 @@
-#ifndef FACEBOOK_PROJECT_CALC_H
-#define FACEBOOK_PROJECT_CALC_H
-
-int sum(int, int);
-
-#endif //FACEBOOK_PROJECT_CALC_H
