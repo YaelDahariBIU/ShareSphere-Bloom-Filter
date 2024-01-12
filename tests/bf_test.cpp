@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 #include "bloom_filter.h"
 
-TEST(BloomFilter, BasicTest) {
+TEST(BFTest, BasicTest) {
     ASSERT_EQ(main1(), 0);
 }
 
