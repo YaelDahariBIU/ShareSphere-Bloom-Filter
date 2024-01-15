@@ -51,7 +51,6 @@ jobs:
           ninja --version
           cmake --version
         # cmd "${{ matrix.config.environment_script }}"
-
 - name: Configure
         shell: bash
         run: |
