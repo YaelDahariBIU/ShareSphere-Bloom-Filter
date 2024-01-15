@@ -5,6 +5,10 @@
 #include "bloom_filter.h"
 
 TEST(BFTest, BasicTest) {
-    ASSERT_EQ(main1(), 0);
+    ASSERT_EQ(addURL("test.com"), 1);
+    ASSERT_EQ(isBlackListed("test.com"), 1);
+    ASSERT_FALSE(isBlackListed("test2.com"));
 }
+
+
 
