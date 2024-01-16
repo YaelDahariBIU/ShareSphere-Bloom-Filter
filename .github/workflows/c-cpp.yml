@@ -84,6 +84,7 @@ jobs:
           ninja --version
           cmake --version
           gcc --version
+          sudo apt-get install wine64
       - name: Install dependencies on ubuntu9
         if: startsWith(matrix.config.name, 'Ubuntu_GCC_9')
         run: |
@@ -119,6 +120,7 @@ jobs:
           sudo update-alternatives --install /usr/bin/cmake cmake /opt/cmake/bin/cmake 1 --force
           echo cmake version after
           cmake --version
+          sudo apt-get install wine64
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macos')
         run: |
@@ -168,5 +170,9 @@ jobs:
           asset_name: ${{ matrix.config.artifact }}.zip
           asset_content_type: application/zip
 
-      - name: Test with gtest
-        run: start ./build/BFTests.exe --gtest_color=yes
+      - name: Test with gtest on Ubuntu
+        if: startsWith(matrix.config.os, 'ubuntu')
+        run: wine ./build/BFTests.exe
+      - name: Test with gtest on Windows
+        if: startsWith(matrix.config.os, 'windows')
+        run: start ./build/BFTests.exe
