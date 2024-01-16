@@ -27,6 +27,7 @@ set(TEST_FILES
 
 # Create the test executable
 add_executable(BFTests ${TEST_FILES} ${SOURCE_FILES})
+add_executable(RUN src/bloom_filter.cpp)
 
 # Link Google Test to the test executable
 target_link_libraries(BFTests PRIVATE gtest gtest_main)
