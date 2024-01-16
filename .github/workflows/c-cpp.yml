@@ -84,7 +84,9 @@ jobs:
           ninja --version
           cmake --version
           gcc --version
-          sudo apt-get install wine64
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install wine32
       - name: Install dependencies on ubuntu9
         if: startsWith(matrix.config.name, 'Ubuntu_GCC_9')
         run: |
@@ -120,7 +122,9 @@ jobs:
           sudo update-alternatives --install /usr/bin/cmake cmake /opt/cmake/bin/cmake 1 --force
           echo cmake version after
           cmake --version
-          sudo apt-get install wine64
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install wine32
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macos')
         run: |
@@ -175,4 +179,4 @@ jobs:
         run: wine ./build/BFTests.exe
       - name: Test with gtest on Windows
         if: startsWith(matrix.config.os, 'windows')
-        run: start ./build/BFTests.exe
+        run: start .\build\BFTests.exe
