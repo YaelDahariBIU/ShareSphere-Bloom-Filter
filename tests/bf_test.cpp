@@ -5,6 +5,6 @@
 #include "bloom_filter.h"
 
 TEST(BFTest, BasicTest) {
-    ASSERT_EQ(main(), 0);
+    ASSERT_EQ(WinMain(), 0);
 }
 
