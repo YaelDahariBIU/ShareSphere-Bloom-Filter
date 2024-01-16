@@ -4,5 +4,5 @@
 
 #ifndef FACEBOOK_PROJECT_BLOOM_FILTER_H
 #define FACEBOOK_PROJECT_BLOOM_FILTER_H
-int main();
+int bf_main();
 #endif //FACEBOOK_PROJECT_BLOOM_FILTER_H
