@@ -3,7 +3,7 @@
 //
 
 #include "bloom_filter.h"
-int main() {
+int WinMain() {
     int x=5;
     return 0;
 }
