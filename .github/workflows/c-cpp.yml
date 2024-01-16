@@ -169,4 +169,4 @@ jobs:
           asset_content_type: application/zip
 
       - name: Test with gtest
-        run: \build\BFTests.exe --gtest_color=yes
+        run: start ./build/BFTests.exe --gtest_color=yes
