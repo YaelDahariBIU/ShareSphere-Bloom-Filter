@@ -3,10 +3,10 @@ name: CMake Build Matrix
 # Controls when the action will run. Triggers the workflow on push
 on: 
   push:
+#    branches: [ "main" ]
   pull_request:
+#    branches: [ "main" ]
   release:
-    # tags:
-    # - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -14,7 +14,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     name: ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
+    runs-on: ${{ matrix.config.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -167,3 +167,6 @@ jobs:
           asset_path: ./${{ matrix.config.artifact }}
           asset_name: ${{ matrix.config.artifact }}.zip
           asset_content_type: application/zip
+
+      - name: Test with gtest
+        run: \build\BFTests.exe --gtest_color=yes
