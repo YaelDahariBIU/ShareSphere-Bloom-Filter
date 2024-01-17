@@ -175,5 +175,4 @@ jobs:
           asset_content_type: application/zip
 
       - name: Test with gtest
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+        run: ctest --test-dir build --output-on-failure
