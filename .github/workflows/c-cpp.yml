@@ -174,9 +174,6 @@ jobs:
           asset_name: ${{ matrix.config.artifact }}.zip
           asset_content_type: application/zip
 
-      - name: Test with gtest on Ubuntu
-        if: startsWith(matrix.config.os, 'ubuntu')
-        run: wine ./build/BFTests.exe
-      - name: Test with gtest on Windows
-        if: startsWith(matrix.config.os, 'windows')
-        run: start .\build\BFTests.exe
+      - name: Test with gtest
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}}
