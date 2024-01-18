@@ -1,6 +1,3 @@
-//
-// Created by Tal on 12/01/2024.
-//
 #define TEST_BUILD
 #include "bloom_filter.cpp"
 #include <gtest/gtest.h>

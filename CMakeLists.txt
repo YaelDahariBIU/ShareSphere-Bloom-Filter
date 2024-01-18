@@ -26,10 +26,12 @@ set(TEST_FILES
         tests/test_main.cpp tests/bf_test.cpp)
 
 # Source+Test files
+# Here we put all src files except for main
 set(SOURCE_FILES_TEST
         src/bloom_filter.cpp src/bloom_filter.h)
 
-# Create the test executable
+# Create the executables
+# We create a test executable and a run one
 add_executable(BFTests ${TEST_FILES} ${SOURCE_FILES_TEST})
 add_executable(Main ${SOURCE_FILES})
 
