@@ -17,6 +17,10 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
+        src/bloom_filter.cpp src/bloom_filter.h src/main.cpp)
+
+set(SOURCE_FILES_TEST
+        # this is where the code we want to test
         src/bloom_filter.cpp src/bloom_filter.h)
 
 # Test files
@@ -26,7 +30,8 @@ set(TEST_FILES
         tests/test_main.cpp tests/bf_test.cpp)
 
 # Create the test executable
-add_executable(BFTests ${TEST_FILES} ${SOURCE_FILES})
+add_executable(BFTests ${TEST_FILES} ${SOURCE_FILES_TEST})
+add_executable(RUN ${SOURCE_FILES})
 
 # Link Google Test to the test executable
 target_link_libraries(BFTests PRIVATE gtest gtest_main)
