@@ -49,7 +49,8 @@ jobs:
         run: |
           choco install ninja cmake
           ninja --version
-          cmake --version 
+          cmake --version
+          
 - name: Configure
         shell: bash
         run: |
