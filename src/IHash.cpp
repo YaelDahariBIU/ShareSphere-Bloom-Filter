@@ -1,7 +1,7 @@
 //
 // Created by Tal on 19/01/2024.
 //
-#include "IHash.h"
+#include "../header/IHash.h"
 #include <iostream>
 #include <string>
 class IHash {

@@ -2,7 +2,7 @@
 // Created by Tal on 19/01/2024.
 //
 
-#include "BloomFilterArray.h"
+#include "../header/BloomFilterArray.h"
 
 //creating new bloom filter array object.
 BloomFilterArray::BloomFilterArray(int size) {
