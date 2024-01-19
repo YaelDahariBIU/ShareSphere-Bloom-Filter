@@ -53,6 +53,15 @@ TEST(BFTEST, FalsePositive) {
     // do I write true false string?
 }
 
+TEST(HashTest, BasicTests) {
+    oneHash hashOne = new oneHash();
+    ASSERT_EQ(hashOne.hash("www.com"), 3);
+    ASSERT_EQ(hashOne.hash("www.com2")!=3, true);
+    twoHash hashTwo = new oneHash();
+    ASSERT_EQ(hashOne.hash("www.com"), 10);
+    ASSERT_EQ(hashOne.hash("www.com2")!=10, true);
+}
+
 
 
 
