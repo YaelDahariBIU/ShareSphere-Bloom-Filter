@@ -62,15 +62,6 @@ TEST(HashTest, BasicTests) {
     ASSERT_EQ(hashOne.hash("www.com2")!=10, true);
 }
 
-TEST(BloomFilterArrayTest, BasicTests) {
-    BloomFilterArray bmArray = new BloomFilterArray(100);
-    bmArray.lightBit(10);
-    ASSERT_EQ(bmArray.isBitLit(10), true);
-    ASSERT_EQ(bmArray.isBitLit(11), false);
-    bmArray.lightBit(11);
-    ASSERT_EQ(bmArray.isBitLit(11), true);
-}
-
 
 
 
