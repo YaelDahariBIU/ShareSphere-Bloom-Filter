@@ -33,7 +33,7 @@ set(TEST_FILES
 set(BFARRAY_SRC_FILES
         # this is the main for tests
         # this file contains the tests
-        src/BloomFilterArray.cpp header/bloom_filter.h)
+        src/BloomFilterArray.cpp header/bloom_filter.h src/BlackList.cpp header/BlackList.h)
 # Test files
 set(BFARRAY_TEST_FILES
         # this is the main for tests

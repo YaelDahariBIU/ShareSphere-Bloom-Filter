@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "../header/BloomFilterArray.h"
+#include "../header/BlackList.h"
 
 TEST(BloomFilterArrayTest, BasicTests) {
     //adding new bloom filter array
@@ -21,7 +22,7 @@ TEST(BloomFilterArrayTest, BasicTests) {
 
 TEST(BlackListURLTest, BasicTests) {
     //creating blacklist object
-    BlackLList blackList = BlackList();
+    BlackList blackList = BlackList();
     //adding first url
     blackList.add("www.com");
     //checking if it was added and if another one is not

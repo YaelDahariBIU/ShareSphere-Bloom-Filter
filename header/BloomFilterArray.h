@@ -11,7 +11,7 @@ class BloomFilterArray {
     private:
         vector<int> vectorBits;
     public:
-        BloomFilterArray(int size);
+        explicit BloomFilterArray(int size);
         void litBit(int bitPlace);
         bool isBitLit(int bitPlace);
 };
