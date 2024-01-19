@@ -17,11 +17,11 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h src/main.cpp src/IHash.cpp header/IHash.h)
+        src/bloom_filter.cpp header/bloom_filter.h src/main.cpp header/IHash.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h src/IHash.cpp header/IHash.h src/BloomFilterArray.cpp header/BloomFilterArray.h)
+        src/bloom_filter.cpp header/bloom_filter.h header/IHash.h src/BloomFilterArray.cpp header/BloomFilterArray.h)
 
 # Test files
 set(TEST_FILES

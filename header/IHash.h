@@ -6,10 +6,15 @@
 #define FACEBOOK_PROJECT_IHASH_H
 #include <string>
 
+using namespace std;
 
-//class IHash {
-size_t Hashing();
-//};
+class IHash {
+private:
+    hash<string> hashFunction;
+public:
+    // pure virtual function providing interface framework.
+    virtual size_t Hashing() = 0;
+};
 
 
 #endif //FACEBOOK_PROJECT_IHASH_H
