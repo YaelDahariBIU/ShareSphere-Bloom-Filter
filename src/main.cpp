@@ -3,8 +3,16 @@
 //
 #include <iostream>
 #include "bloom_filter.h"
+#include "Input.h"
 
 int main() {
-    app();
+//    app();
+    Input i;
+    i.init();
+    cout << i.getSize() << endl;
+    for (const int& s : i.getHashFuns()) {
+        cout << s;
+        cout << " ";
+    }
     return 0;
 }
