@@ -7,7 +7,7 @@
 
 int main() {
 //    app();
-    Input i;
+    Input i = Input(2);
     i.init();
     cout << i.getSize() << endl;
     for (const int& s : i.getHashFuns()) {

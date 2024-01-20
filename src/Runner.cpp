@@ -10,13 +10,14 @@ const int TASK = 0;
 const int URL = 1;
 
 
-Runner::Runner() {
+Runner::Runner(Input input) : input(input) {
     // TODO: create instance of filter
     // TODO: create input with num of funs
     ICommand* addURL = new AddURLCommand();
     commands["1"] = addURL;
     ICommand* containsURL = new ContainsURLCommand();
     commands["2"] = containsURL;
+    input = Input(2);
 }
 
 void Runner::run() {

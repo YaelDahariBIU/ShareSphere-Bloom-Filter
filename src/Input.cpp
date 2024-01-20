@@ -4,7 +4,6 @@
 #include <utility>
 #include <algorithm>
 using namespace std;
-const int MAX_HASH_FUNS = 2;
 const int MAX_ARGS = 2;
 
 Input::Input(int num) {
@@ -48,15 +47,13 @@ void Input::init() noexcept {
         try {
             n = stoi(s);
         } catch (exception& e) {
-            init();
-            return;
+            init(); return;
         }
         if (first && n > 0) {
             setSize(n);
             first = 0;
         } else if (n > numOfHashFuns || n <= 0) {
-            init();
-            return;
+            init(); return;
         } else if (find(nums.begin(), nums.end(), n) == nums.end()) {
             nums.push_back(n);
         }
@@ -66,7 +63,7 @@ void Input::init() noexcept {
 //    } else {
 //        setHashFuns(nums);
 //    }
-    (nums.empty() || (words.size() > MAX_HASH_FUNS)) ? init() : setHashFuns(nums);
+    (nums.empty() || (nums.size() > numOfHashFuns)) ? init() : setHashFuns(nums);
 }
 
 
