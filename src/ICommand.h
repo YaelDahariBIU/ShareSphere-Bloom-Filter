@@ -1,5 +1,3 @@
-
-
 #ifndef FACEBOOK_PROJECT_ICOMMAND_H
 #define FACEBOOK_PROJECT_ICOMMAND_H
 #include <string>

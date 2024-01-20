@@ -1,7 +1,3 @@
-//
-// Created by Yael Dahari on 19/01/2024.
-//
-
 #include "Runner.h"
 #include "AddURLCommand.h"
 #include "ContainsURLCommand.h"

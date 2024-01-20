@@ -5,6 +5,7 @@
 #include <algorithm>
 using namespace std;
 const int MAX_ARGS = 2;
+const int INVALID = 0;
 
 Input::Input(int num) {
     size = 0;
@@ -41,7 +42,7 @@ void Input::init() noexcept {
     getline(cin, line);
     istringstream iss(line);
     vector<int> nums;
-    int n, first = 1;
+    int n, first = true;
     vector<string> words = subWords(iss);
     for (const string& s : words) {
         try {
@@ -49,10 +50,10 @@ void Input::init() noexcept {
         } catch (exception& e) {
             init(); return;
         }
-        if (first && n > 0) {
+        if (first && n > INVALID) {
             setSize(n);
-            first = 0;
-        } else if (n > numOfHashFuns || n <= 0) {
+            first = false;
+        } else if (n > numOfHashFuns || n <= INVALID) {
             init(); return;
         } else if (find(nums.begin(), nums.end(), n) == nums.end()) {
             nums.push_back(n);
