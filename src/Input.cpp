@@ -12,21 +12,7 @@ Input::Input(int num) {
     numOfHashFuns = num;
 }
 
-
-vector<int> subNums(istringstream &sentence) noexcept(false){
-    vector<int> nums;
-    string num;
-    while(getline(sentence, num, ' ')) {
-        try {
-            nums.push_back(stoi(num));
-        } catch (invalid_argument &argument) {
-            throw argument;
-        }
-    }
-    return nums;
-}
-
-
+/* gets a string stream and returns a vector containing each word */
 vector<string> subWords(istringstream &sentence) {
     vector<string> words;
     string word;
@@ -36,38 +22,43 @@ vector<string> subWords(istringstream &sentence) {
     return words;
 }
 
-
+/* this function has a recursive call, calling the function again and again
+until getting the input as wanted. */
 void Input::init() noexcept {
     string line;
     getline(cin, line);
-    istringstream iss(line);
+    istringstream sentence(line);
     vector<int> nums;
     int n, first = true;
-    vector<string> words = subWords(iss);
+    // sub into words
+    vector<string> words = subWords(sentence);
     for (const string& s : words) {
+        // try to convert to int - if not, input invalid and call recursively
         try {
             n = stoi(s);
         } catch (exception& e) {
             init(); return;
         }
+        // the first number is the size, so we set it.
         if (first && n > INVALID) {
             setSize(n);
             first = false;
-        } else if (n > numOfHashFuns || n <= INVALID) {
+        }
+        // if the input is invalid (bigger than hashFuns or negative)
+        else if (n > numOfHashFuns || n <= INVALID) {
             init(); return;
-        } else if (find(nums.begin(), nums.end(), n) == nums.end()) {
+        }
+        // preventing duplicates in nums.
+        else if (find(nums.begin(), nums.end(), n) == nums.end()) {
             nums.push_back(n);
         }
     }
-//    if (nums.empty() || nums.size() > MAX_HASH_FUNS) {
-//        init();
-//    } else {
-//        setHashFuns(nums);
-//    }
-    (nums.empty() || (nums.size() > numOfHashFuns)) ? init() : setHashFuns(nums);
+    // dealing with nums being empty - otherwise setting hashFuns
+    nums.empty() ? init() : setHashFuns(nums);
 }
 
-
+/* this function reads a line, divides it to words and make sure the number
+ * of words is 2. otherwise calls recursively */
 vector<string> Input::getNext() {
     string line;
     getline(cin, line);
