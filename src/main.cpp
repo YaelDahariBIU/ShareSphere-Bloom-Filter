@@ -1,12 +1,10 @@
-//
-// Created by Tal on 16/01/2024.
-//
 #include <iostream>
-#include "Hash/HashOne.h"
-#include "Hash/HashTwo.h"
+#include "BFApp/Input.h"
+#include "BFApp/Runner.h"
 
 int main() {
-    HashTwo hashTwo = HashTwo();
-    cout<<hashTwo.hashing("www.com")%120;
+    Input i = Input(2);
+    Runner runner = Runner(i);
+    runner.run();
     return 0;
 }

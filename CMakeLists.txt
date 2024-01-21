@@ -17,11 +17,13 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/main.cpp src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h
+        src/main.cpp src/BFApp/Runner.cpp src/BFApp/Runner.h src/BFApp/Input.cpp src/BFApp/Input.h src/Command/AddURLCommand.cpp src/Command/AddURLCommand.h src/Command/ICommand.h src/Command/ContainsURLCommand.cpp src/Command/ContainsURLCommand.h
+        src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h
         src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
+        src/BFApp/Runner.cpp src/BFApp/Runner.h src/BFApp/Input.cpp src/BFApp/Input.h src/Command/AddURLCommand.cpp src/Command/AddURLCommand.h src/Command/ICommand.h src/Command/ContainsURLCommand.cpp src/Command/ContainsURLCommand.h
         src/Hash/IHash.h src/BloomFilter/BloomFilterArray.cpp src/BloomFilter/BloomFilterArray.h
         src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h
         src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h)
@@ -30,7 +32,7 @@ set(SOURCE_FILES_TEST
 set(TEST_FILES
         # this is the main for tests
         # this file contains the tests
-        tests/test_main.cpp)
+        tests/test_main.cpp tests/input_test.cpp)      
 
 # source files
 set(BFARRAY_SRC_FILES
