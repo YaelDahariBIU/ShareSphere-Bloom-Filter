@@ -8,7 +8,7 @@
 
 TEST(BloomFilterArrayTest, BasicTests) {
     //adding new bloom filter array
-    BloomFilterArray bmArray = BloomFilterArray(100);
+    BloomFilterArray bmArray = BloomFilterArray();
     //lightning bit number 10
     bmArray.litBit(10);
     //checking if it lit as we wanted.
