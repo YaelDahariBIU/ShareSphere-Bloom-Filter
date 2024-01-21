@@ -17,11 +17,11 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/bloom_filter.cpp src/bloom_filter.h src/main.cpp src/Runner.cpp src/Runner.h src/Input.cpp src/Input.h src/AddURLCommand.cpp src/AddURLCommand.h src/ICommand.h src/ContainsURLCommand.cpp src/ContainsURLCommand.h)
+        src/bloom_filter.cpp src/header/bloom_filter.h src/main.cpp src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/bloom_filter.cpp src/bloom_filter.h src/Runner.cpp src/Runner.h src/Input.cpp src/Input.h src/AddURLCommand.cpp src/AddURLCommand.h src/ICommand.h src/ContainsURLCommand.cpp src/ContainsURLCommand.h)
+        src/bloom_filter.cpp src/header/bloom_filter.h src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
 
 # Test files
 set(TEST_FILES

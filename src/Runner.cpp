@@ -1,7 +1,7 @@
-#include "Runner.h"
-#include "AddURLCommand.h"
-#include "ContainsURLCommand.h"
-#include "Input.h"
+#include "header/Runner.h"
+#include "header/AddURLCommand.h"
+#include "header/ContainsURLCommand.h"
+#include "header/Input.h"
 const int TASK = 0;
 const int URL = 1;
 

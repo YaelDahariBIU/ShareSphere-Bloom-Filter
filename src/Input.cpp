@@ -1,4 +1,4 @@
-#include "Input.h"
+#include "header/Input.h"
 #include <iostream>
 #include <sstream>
 #include <utility>
@@ -80,11 +80,11 @@ vector<string> Input::getNext() {
 }
 
 vector<int> Input::getHashFuns() {
-    return hash_funs;
+    return hashFuns;
 }
 
 void Input::setHashFuns(vector<int> hf) {
-    hash_funs = std::move(hf);
+    hashFuns = std::move(hf);
 }
 
 void Input::setSize(int s) {

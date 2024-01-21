@@ -1,6 +1,6 @@
 #include <iostream>
-#include "bloom_filter.h"
-#include "Input.h"
+#include "header/bloom_filter.h"
+#include "header/Input.h"
 
 int main() {
 //    app();

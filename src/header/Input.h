@@ -9,7 +9,7 @@ class Input {
 private:
     int size;
     int numOfHashFuns;
-    vector<int> hash_funs;
+    vector<int> hashFuns;
     void setSize(int s);
     void setHashFuns(vector<int> hf);
 

@@ -2,7 +2,7 @@
 // Created by Tal on 12/01/2024.
 //
 #include <gtest/gtest.h>
-#include "bloom_filter.h"
+#include "header/bloom_filter.h"
 #include <list>
 
 TEST(BFTest, BasicTest) {
