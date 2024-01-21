@@ -11,7 +11,7 @@
 using namespace std;
 class BlackList {
 private:
-    vector<string> vectorURL;
+    vector<string> URLs;
 public:
     BlackList();
     void add(const string& url);

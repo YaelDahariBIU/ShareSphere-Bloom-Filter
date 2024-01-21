@@ -4,10 +4,10 @@
 
 #include "../header/HashOne.h"
 
-HashOne::HashOne() {
-    firstHash = hash<string>();
+HashOne::HashOne():IHash() {
+    hashFunction = hash<string>();
 }
 
 size_t HashOne::hashing(string url) {
-    return firstHash(url);
+    return this->hashFunction(url);
 }

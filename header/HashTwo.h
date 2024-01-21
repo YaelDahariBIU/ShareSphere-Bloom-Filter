@@ -2,21 +2,22 @@
 // Created by Tal on 21/01/2024.
 //
 
-#ifndef FACEBOOK_PROJECT_HASHONE_H
-#define FACEBOOK_PROJECT_HASHONE_H
+#ifndef FACEBOOK_PROJECT_HASHTWO_H
+#define FACEBOOK_PROJECT_HASHTWO_H
 
 
 #include "IHash.h"
 
-class HashOne: public IHash{
+class HashTwo: public IHash{
 private:
     hash<string> hashFunction;
 
 
 public:
-    HashOne();
+    HashTwo();
     size_t hashing(string) override;
+
 };
 
 
-#endif //FACEBOOK_PROJECT_HASHONE_H
+#endif //FACEBOOK_PROJECT_HASHTWO_H

@@ -17,11 +17,14 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h src/main.cpp header/IHash.h)
+        src/bloom_filter.cpp header/bloom_filter.h src/main.cpp header/IHash.h src/HashOne.cpp header/HashOne.h
+        src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h header/IHash.h src/BloomFilterArray.cpp header/BloomFilterArray.h)
+        src/bloom_filter.cpp header/bloom_filter.h header/IHash.h src/BloomFilterArray.cpp header/BloomFilterArray.h
+        header/IHash.h src/HashOne.cpp header/HashOne.h
+        src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h)
 
 # Test files
 set(TEST_FILES
@@ -33,7 +36,7 @@ set(TEST_FILES
 set(BFARRAY_SRC_FILES
         # this is the main for tests
         # this file contains the tests
-        src/BloomFilterArray.cpp header/bloom_filter.h src/BlackList.cpp header/BlackList.h src/HashOne.cpp header/HashOne.h)
+        src/BloomFilterArray.cpp header/bloom_filter.h src/BlackList.cpp header/BlackList.h src/HashOne.cpp header/HashOne.h src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h)
 # Test files
 set(BFARRAY_TEST_FILES
         # this is the main for tests

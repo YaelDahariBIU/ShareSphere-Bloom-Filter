@@ -3,8 +3,11 @@
 //
 #include <iostream>
 #include "../header/bloom_filter.h"
+#include "../header/HashOne.h"
+#include "../header/HashTwo.h"
 
 int main() {
-    app();
+    HashTwo hashTwo = HashTwo();
+    cout<<hashTwo.hashing("www.com")%120;
     return 0;
 }

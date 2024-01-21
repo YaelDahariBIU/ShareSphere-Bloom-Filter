@@ -6,14 +6,14 @@
 
 //creating new bloom filter array object.
 BloomFilterArray::BloomFilterArray(int size) {
-    vectorBits=vector<int>(size, 0);
+    Bits=vector<int>(size, 0);
 }
 
 //checking if the
 bool BloomFilterArray::isBitLit(int bitPlace) {
-    return vectorBits[bitPlace]==1;
+    return Bits[bitPlace]==1;
 }
 
 void BloomFilterArray::litBit(int bitPlace) {
-    vectorBits[bitPlace] = 1;
+    Bits[bitPlace] = 1;
 }

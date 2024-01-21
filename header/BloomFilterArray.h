@@ -9,7 +9,7 @@ using namespace std;
 
 class BloomFilterArray {
     private:
-        vector<int> vectorBits;
+        vector<int> Bits;
     public:
         explicit BloomFilterArray(int size);
         void litBit(int bitPlace);

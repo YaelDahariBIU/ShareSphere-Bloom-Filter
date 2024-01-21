@@ -6,13 +6,13 @@
 using namespace std;
 
 BlackList::BlackList() {
-    vectorURL = vector<string>();
+    URLs = vector<string>();
 }
 
 void BlackList::add(const string& url) {
-    vectorURL.push_back(url);
+    URLs.push_back(url);
 }
 
 bool BlackList::doesExist(const string& url) {
-    return find(vectorURL.begin(), vectorURL.end(), url) != vectorURL.end();
+    return find(URLs.begin(), URLs.end(), url) != URLs.end();
 }

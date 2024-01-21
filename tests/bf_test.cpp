@@ -3,6 +3,8 @@
 //
 #include <gtest/gtest.h>
 #include "../header/bloom_filter.h"
+#include "../header/HashOne.h"
+#include "../header/HashTwo.h"
 #include <list>
 
 TEST(BFTest, BasicTest) {
@@ -54,12 +56,12 @@ TEST(BFTEST, FalsePositive) {
 }
 
 TEST(HashTest, BasicTests) {
-    oneHash hashOne = new oneHash();
-    ASSERT_EQ(hashOne.hash("www.com"), 3);
-    ASSERT_EQ(hashOne.hash("www.com2")!=3, true);
-    twoHash hashTwo = new oneHash();
-    ASSERT_EQ(hashOne.hash("www.com"), 10);
-    ASSERT_EQ(hashOne.hash("www.com2")!=10, true);
+    HashOne hashOne = HashOne();
+    ASSERT_EQ(hashOne.hashing("www.com"), 16058600311704576603);
+    ASSERT_EQ(hashOne.hashing("www.com2")!=16058600311704576603, true);
+    HashTwo hashTwo = HashTwo();
+    ASSERT_EQ(hashTwo.hashing("www.com"), 14602934796652375482);
+    ASSERT_EQ(hashTwo.hashing("www.com2")!=14602934796652375482, true);
 }
 
 
