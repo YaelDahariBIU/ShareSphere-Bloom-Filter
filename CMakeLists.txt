@@ -17,17 +17,17 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/bloom_filter.cpp src/header/bloom_filter.h src/main.cpp src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
+        src/main.cpp src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/bloom_filter.cpp src/header/bloom_filter.h src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
+        src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
 
 # Test files
 set(TEST_FILES
         # this is the main for tests
         # this file contains the tests
-        tests/test_main.cpp tests/bf_test.cpp tests/input_test.cpp)
+        tests/test_main.cpp tests/input_test.cpp)
 
 # Create the test executable
 add_executable(BFTests ${TEST_FILES} ${SOURCE_FILES_TEST})
