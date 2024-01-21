@@ -17,11 +17,11 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/main.cpp src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
+        src/main.cpp src/BFApp/Runner.cpp src/BFApp/Runner.h src/BFApp/Input.cpp src/BFApp/Input.h src/Command/AddURLCommand.cpp src/Command/AddURLCommand.h src/Command/ICommand.h src/Command/ContainsURLCommand.cpp src/Command/ContainsURLCommand.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/Runner.cpp src/header/Runner.h src/Input.cpp src/header/Input.h src/AddURLCommand.cpp src/header/AddURLCommand.h src/header/ICommand.h src/ContainsURLCommand.cpp src/header/ContainsURLCommand.h)
+        src/BFApp/Runner.cpp src/BFApp/Runner.h src/BFApp/Input.cpp src/BFApp/Input.h src/Command/AddURLCommand.cpp src/Command/AddURLCommand.h src/Command/ICommand.h src/Command/ContainsURLCommand.cpp src/Command/ContainsURLCommand.h)
 
 # Test files
 set(TEST_FILES

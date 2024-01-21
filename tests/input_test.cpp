@@ -1,6 +1,6 @@
 
 #include <gtest/gtest.h>
-#include "header/Input.h"
+#include "BFApp/Input.h"
 
 TEST(BFTest, Basic) {
     Input i = Input();

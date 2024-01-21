@@ -1,8 +1,8 @@
 #include <stdexcept>
-#include "header/Runner.h"
-#include "header/AddURLCommand.h"
-#include "header/ContainsURLCommand.h"
-#include "header/Input.h"
+#include "Runner.h"
+#include "Command/AddURLCommand.h"
+#include "Command/ContainsURLCommand.h"
+#include "Input.h"
 #include <map>
 const int TASK = 0;
 const int URL = 1;

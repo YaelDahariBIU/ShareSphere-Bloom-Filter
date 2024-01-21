@@ -1,6 +1,6 @@
 #include <iostream>
-#include "header/Input.h"
-#include "header/Runner.h"
+#include "BFApp/Input.h"
+#include "BFApp/Runner.h"
 
 int main() {
 //    app();
