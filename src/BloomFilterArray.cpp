@@ -5,9 +5,9 @@
 #include "../header/BloomFilterArray.h"
 
 //creating new bloom filter array object.
-BloomFilterArray::BloomFilterArray(int size) {
-    Bits=vector<int>(size, 0);
-}
+//BloomFilterArray::BloomFilterArray(int size) {
+//    Bits = vector<int>(size, 0);
+//}
 
 //checking if the
 bool BloomFilterArray::isBitLit(int bitPlace) {
@@ -16,4 +16,8 @@ bool BloomFilterArray::isBitLit(int bitPlace) {
 
 void BloomFilterArray::litBit(int bitPlace) {
     Bits[bitPlace] = 1;
+}
+
+size_t BloomFilterArray::getSize() {
+    return Bits.size();
 }

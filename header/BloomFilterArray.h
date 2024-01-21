@@ -11,9 +11,10 @@ class BloomFilterArray {
     private:
         vector<int> Bits;
     public:
-        explicit BloomFilterArray(int size);
+//        explicit BloomFilterArray(int size);
         void litBit(int bitPlace);
         bool isBitLit(int bitPlace);
+        size_t getSize();
 };
 
 
