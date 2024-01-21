@@ -14,3 +14,7 @@ size_t HashSet::getHashed(int hashNum, string url) {
     return hashCollection[hashNum]->hashing(url);
 }
 
+int HashSet::getSize() {
+    return (int) hashCollection.size();
+}
+

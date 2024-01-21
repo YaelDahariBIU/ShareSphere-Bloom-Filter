@@ -40,4 +40,12 @@ void Filter::contains(const string& url, const vector<int>& hashFuns) {
     }
 }
 
+int Filter::getHashSetSize() {
+    return hashSet.getSize();
+}
+
+void Filter::setSize(int size) {
+    filter = BloomFilterArray(size);
+}
+
 

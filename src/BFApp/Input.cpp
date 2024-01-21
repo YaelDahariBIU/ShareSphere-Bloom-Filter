@@ -86,5 +86,10 @@ int Input::getSize() const {
     return size;
 }
 
+Input::Input() {
+    numOfHashFuns = 0;
+    size = 0;
+}
+
 
 

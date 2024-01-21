@@ -15,6 +15,9 @@ private:
 
 public:
     explicit Input(int num);
+
+    Input();
+
     vector<int> getHashFuns();
     void init() noexcept;
     vector<string> getNext();

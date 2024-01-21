@@ -13,7 +13,7 @@ class HashSet {
     public:
         HashSet();
         size_t getHashed(int, string);
-
+        int getSize();
 
 };
 

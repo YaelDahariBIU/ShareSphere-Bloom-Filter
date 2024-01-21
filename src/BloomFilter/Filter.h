@@ -20,6 +20,8 @@ public:
     static Filter* getInstance();
     void addURL(const string& url, const vector<int>& hashFuns);
     void contains(const string& url, const vector<int>& hashFuns);
+    int getHashSetSize();
+    void setSize(int size);
 };
 
 

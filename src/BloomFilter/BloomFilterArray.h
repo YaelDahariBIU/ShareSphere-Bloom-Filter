@@ -10,6 +10,8 @@ class BloomFilterArray {
         void litBit(int bitPlace);
         bool isBitLit(int bitPlace);
         size_t getSize();
+        BloomFilterArray(int size);
+        BloomFilterArray();
 };
 
 

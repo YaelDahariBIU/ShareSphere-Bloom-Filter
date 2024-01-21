@@ -7,7 +7,7 @@ using namespace std;
 
 class AddURLCommand : public ICommand {
 public:
-    void execute(string url) override;
+    void execute(string url, vector<int> hashFuns) override;
 };
 
 

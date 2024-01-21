@@ -13,3 +13,11 @@ void BloomFilterArray::litBit(int bitPlace) {
 size_t BloomFilterArray::getSize() {
     return Bits.size();
 }
+
+BloomFilterArray::BloomFilterArray(int size) {
+    Bits = vector<int>(size, 0);
+}
+
+BloomFilterArray::BloomFilterArray() {
+    Bits = vector<int>(0, 0);
+}

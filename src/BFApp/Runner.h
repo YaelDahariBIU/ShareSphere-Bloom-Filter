@@ -12,7 +12,7 @@ class Runner {
 public:
     map<string, ICommand*> commands;
     Input input;
-    Runner(Input input);
+    Runner();
     void run();
 };
 

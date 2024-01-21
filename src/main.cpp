@@ -1,10 +1,8 @@
 #include <iostream>
-#include "BFApp/Input.h"
 #include "BFApp/Runner.h"
 
 int main() {
-    Input i = Input(2);
-    Runner runner = Runner(i);
+    Runner runner = Runner();
     runner.run();
     return 0;
 }
