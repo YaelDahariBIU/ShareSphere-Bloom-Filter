@@ -9,11 +9,9 @@
 using namespace std;
 
 class IHash {
-private:
-    hash<string> hashFunction;
 public:
     // pure virtual function providing interface framework.
-    virtual size_t Hashing() = 0;
+    virtual size_t hashing(string) = 0;
 };
 
 
