@@ -1,8 +1,4 @@
-//
-// Created by Tal on 21/01/2024.
-//
-
-#include "../header/HashOne.h"
+#include "HashOne.h"
 
 HashOne::HashOne():IHash() {
     hashFunction = hash<string>();

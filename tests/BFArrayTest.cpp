@@ -3,8 +3,8 @@
 //
 
 #include <gtest/gtest.h>
-#include "../header/BloomFilterArray.h"
-#include "../header/BlackList.h"
+#include "BloomFilter/BloomFilterArray.h"
+#include "BloomFilter/BlackList.h"
 
 TEST(BloomFilterArrayTest, BasicTests) {
     //adding new bloom filter array

@@ -1,7 +1,3 @@
-//
-// Created by Tal on 21/01/2024.
-//
-
 #ifndef FACEBOOK_PROJECT_HASHSET_H
 #define FACEBOOK_PROJECT_HASHSET_H
 #include <string>

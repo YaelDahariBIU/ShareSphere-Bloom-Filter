@@ -2,9 +2,8 @@
 // Created by Tal on 16/01/2024.
 //
 #include <iostream>
-#include "../header/bloom_filter.h"
-#include "../header/HashOne.h"
-#include "../header/HashTwo.h"
+#include "Hash/HashOne.h"
+#include "Hash/HashTwo.h"
 
 int main() {
     HashTwo hashTwo = HashTwo();

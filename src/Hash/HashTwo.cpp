@@ -1,8 +1,4 @@
-//
-// Created by Tal on 21/01/2024.
-//
-
-#include "../header/HashTwo.h"
+#include "HashTwo.h"
 
 HashTwo::HashTwo() {
     //creating new HashTwo object

@@ -1,8 +1,4 @@
-//
-// Created by Tal on 19/01/2024.
-//
-
-#include "../header/BlackList.h"
+#include "BlackList.h"
 using namespace std;
 
 BlackList::BlackList() {

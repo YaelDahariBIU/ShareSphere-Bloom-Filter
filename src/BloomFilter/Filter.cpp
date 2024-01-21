@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/Filter.h"
+#include "Filter.h"
 
 Filter::Filter() {
     filter = BloomFilterArray();

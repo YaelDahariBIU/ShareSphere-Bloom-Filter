@@ -17,26 +17,26 @@ enable_testing()
 # Source files
 set(SOURCE_FILES
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h src/main.cpp header/IHash.h src/HashOne.cpp header/HashOne.h
-        src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h src/Filter.cpp header/Filter.h)
+        src/main.cpp src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h
+        src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
-        src/bloom_filter.cpp header/bloom_filter.h header/IHash.h src/BloomFilterArray.cpp header/BloomFilterArray.h
-        header/IHash.h src/HashOne.cpp header/HashOne.h
-        src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h src/Filter.cpp header/Filter.h)
+        src/Hash/IHash.h src/BloomFilter/BloomFilterArray.cpp src/BloomFilter/BloomFilterArray.h
+        src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h
+        src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h)
 
 # Test files
 set(TEST_FILES
         # this is the main for tests
         # this file contains the tests
-        tests/test_main.cpp tests/bf_test.cpp)
+        tests/test_main.cpp)
 
 # source files
 set(BFARRAY_SRC_FILES
         # this is the main for tests
         # this file contains the tests
-        src/BloomFilterArray.cpp header/bloom_filter.h src/BlackList.cpp header/BlackList.h src/HashOne.cpp header/HashOne.h src/HashTwo.cpp header/HashTwo.h src/HashSet.cpp header/HashSet.h src/Filter.cpp header/Filter.h)
+        src/BloomFilter/BloomFilterArray.cpp src/BloomFilter/BlackList.cpp src/BloomFilter/BlackList.h src/Hash/HashOne.cpp src/Hash/HashOne.h src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h)
 # Test files
 set(BFARRAY_TEST_FILES
         # this is the main for tests

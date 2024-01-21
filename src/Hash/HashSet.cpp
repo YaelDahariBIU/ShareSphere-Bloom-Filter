@@ -1,10 +1,6 @@
-//
-// Created by Tal on 21/01/2024.
-//
-
-#include "../header/HashSet.h"
-#include "../header/HashOne.h"
-#include "../header/HashTwo.h"
+#include "HashSet.h"
+#include "HashOne.h"
+#include "HashTwo.h"
 
 
 HashSet::HashSet() {

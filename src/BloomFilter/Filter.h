@@ -1,7 +1,3 @@
-//
-// Created by Yael Dahari on 21/01/2024.
-//
-
 #ifndef FACEBOOK_PROJECT_FILTER_H
 #define FACEBOOK_PROJECT_FILTER_H
 
@@ -9,7 +5,7 @@
 #include <mutex>
 #include "BloomFilterArray.h"
 #include "BlackList.h"
-#include "HashSet.h"
+#include "Hash/HashSet.h"
 
 class Filter {
 private:
