@@ -2,7 +2,7 @@
 #define FACEBOOK_PROJECT_RUNNER_H
 
 using namespace std;
-#include "Command/ICommand.h"
+#include "../Command/ICommand.h"
 #include <map>
 #include <string>
 #include "Input.h"

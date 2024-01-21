@@ -5,7 +5,7 @@
 #include <mutex>
 #include "BloomFilterArray.h"
 #include "BlackList.h"
-#include "Hash/HashSet.h"
+#include "../Hash/HashSet.h"
 
 class Filter {
 private:
