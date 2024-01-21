@@ -2,10 +2,10 @@
 #define FACEBOOK_PROJECT_RUNNER_H
 
 using namespace std;
-#include "header/ICommand.h"
+#include "ICommand.h"
 #include <map>
 #include <string>
-#include "header/Input.h"
+#include "Input.h"
 
 
 class Runner {

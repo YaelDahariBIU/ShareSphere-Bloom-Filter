@@ -1,7 +1,9 @@
+#include <stdexcept>
 #include "header/Runner.h"
 #include "header/AddURLCommand.h"
 #include "header/ContainsURLCommand.h"
 #include "header/Input.h"
+#include <map>
 const int TASK = 0;
 const int URL = 1;
 
@@ -19,11 +21,12 @@ Runner::Runner(Input input) : input(input) {
 void Runner::run() {
     input.init();
     vector<string> command;
+    string task, url;
     while(true) {
         command = input.getNext();
-        try {
+        if (commands[command.at(TASK)]) {
             commands[command.at(TASK)]->execute(command.at(URL));
-        } catch(...) {}
+        }
     }
 }
 
