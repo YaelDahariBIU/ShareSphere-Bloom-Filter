@@ -1,4 +1,3 @@
-#include <iostream>
 #include "BFApp/Runner.h"
 
 int main() {
