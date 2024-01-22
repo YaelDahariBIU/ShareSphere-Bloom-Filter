@@ -8,7 +8,7 @@ Filter::Filter() {
 }
 
 Filter* Filter::getInstance() {
-    //creating first instance if its the first time initializing the bject
+    //creating first instance if it's the first time initializing the bject
     if (instancePtr == nullptr) {
         instancePtr = new Filter();
     }
@@ -19,9 +19,13 @@ Filter* Filter::getInstance() {
 Filter* Filter::instancePtr = nullptr;
 
 void Filter::addURL(const string& url, const vector<int>& hashFuns) {
+    //adding ur t blacklist
+    //TODO:: not good!!!! need to check the url doesnt exist!
     blackList.add(url);
     size_t result;
+    //going through the hash functions and lightning the wanted bit.
     for (int h : hashFuns) {
+        //getting the index after hashing and resizing it to the array size.
         result = hashSet.getHashed(h, url);
         filter.litBit(result % filter.getSize());
     }
@@ -29,6 +33,9 @@ void Filter::addURL(const string& url, const vector<int>& hashFuns) {
 
 void Filter::contains(const string& url, const vector<int>& hashFuns) {
     size_t result;
+    //going through all hash functions and checking if the bit is lit.
+    //if one bit was not up, print false. if all are lit, check if its in the
+    // list, and print result.
     for (int h : hashFuns) {
         result = hashSet.getHashed(h, url);
         // if the filter doesn't contain the result
