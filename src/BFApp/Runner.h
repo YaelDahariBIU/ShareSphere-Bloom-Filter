@@ -7,7 +7,8 @@ using namespace std;
 #include <string>
 #include "Input.h"
 
-
+/* class Runner: this class holds the command to execute, the input from the
+ * user and run function to execute commands.*/
 class Runner {
 public:
     map<string, ICommand*> commands;

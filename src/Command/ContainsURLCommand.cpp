@@ -2,7 +2,7 @@
 #include "../BloomFilter/Filter.h"
 
 void ContainsURLCommand::execute(string url, vector<int> hashFuns) {
-    // call getInstance and invoke command
+    //checking if the url exists in the bloom filter using static method and printing result.
     Filter* filter = Filter::getInstance();
     filter->contains(url, hashFuns);
 }

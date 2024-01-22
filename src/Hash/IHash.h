@@ -3,7 +3,10 @@
 #include <string>
 
 using namespace std;
-
+/**class IHash: this class is used as an interface, that every hash function
+ * will implement, the class has only one function, returning the hashing
+ * result.
+ * **/
 class IHash {
 public:
     // pure virtual function providing interface framework.

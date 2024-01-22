@@ -3,7 +3,9 @@
 
 
 #include "IHash.h"
-
+/**class HashOne: this class is used to create hash objects, allowing us
+ * hashing strings in different methods. the class implements the interface
+ * IHash,, allowing polymorphism.**/
 class HashOne: public IHash{
 private:
     hash<string> hashFunction;

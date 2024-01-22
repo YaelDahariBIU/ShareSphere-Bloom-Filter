@@ -10,7 +10,9 @@ const int URL = 1;
 
 
 Runner::Runner() {
+    //creating filter object running our bloom filter.
     Filter* filter = Filter::getInstance();
+    //getting input from the user, max input is the number of hash functions.
     input = Input(filter->getHashSetSize());
     //adding to commands map task1: adding url and task 2: searching for url.
     ICommand* addURL = new AddURLCommand();

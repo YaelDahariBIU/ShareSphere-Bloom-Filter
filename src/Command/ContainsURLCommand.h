@@ -3,7 +3,9 @@
 
 
 #include "ICommand.h"
-
+/**class ContainsURLCommand: this class is used to check if url already
+ * exists in the bloom filter. the class implements ICommand interface,
+ * allowing polymorphism **/
 class ContainsURLCommand : public ICommand {
 public:
     void execute(string url, vector<int> hashFuns) override;

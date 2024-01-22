@@ -12,7 +12,7 @@ Input::Input(int num) {
     numOfHashFuns = num;
 }
 
-/* gets a string stream and returns a vector containing each word */
+/** gets a string stream and returns a vector containing each word **/
 vector<string> subWords(istringstream &sentence) {
     vector<string> words;
     string word;
@@ -22,8 +22,8 @@ vector<string> subWords(istringstream &sentence) {
     return words;
 }
 
-/* this function has a recursive call, calling the function again and again
-until getting the input as wanted. */
+/** this function has a recursive call, calling the function again and again
+until getting the input as wanted. **/
 void Input::init() noexcept {
     string line;
     getline(cin, line);
@@ -57,8 +57,8 @@ void Input::init() noexcept {
     nums.empty() ? init() : setHashFuns(nums);
 }
 
-/* this function reads a line, divides it to words and make sure the number
- * of words is 2. otherwise calls recursively */
+/** this function reads a line, divides it to words and make sure the number
+ * of words is 2. otherwise calls recursively **/
 vector<string> Input::getNext() {
     string line;
     getline(cin, line);
