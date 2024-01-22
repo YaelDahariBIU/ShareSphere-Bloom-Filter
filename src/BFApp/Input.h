@@ -15,9 +15,9 @@ private:
     int numOfHashFuns;
     //getting the vector of the hash the user asked for
     vector<int> hashFuns;
-    //TODO::setting size of the input?????
+    //change the size of bloom filter array
     void setSize(int s);
-    //TODO::?????
+    //setting size of the number of hash functions.
     void setHashFuns(vector<int> hf);
 
 public:

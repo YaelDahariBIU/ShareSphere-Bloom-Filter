@@ -8,7 +8,9 @@ BlackList::BlackList() {
 
 //adding url to the list.
 void BlackList::add(const string& url) {
-    URLs.push_back(url);
+    if(!doesExist(url)) {
+        URLs.push_back(url);
+    }
 }
 
 //checking if the url exists in the list.
