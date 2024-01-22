@@ -5,6 +5,7 @@
 #include <gtest/gtest.h>
 #include "BloomFilter/BloomFilterArray.h"
 #include "BloomFilter/BlackList.h"
+#include "BloomFilter/Filter.h"
 
 TEST(BloomFilterArrayTest, BasicTests) {
     //adding new bloom filter array
@@ -23,6 +24,19 @@ TEST(BloomFilterArrayTest, BasicTests) {
 TEST(BlackListURLTest, BasicTests) {
     //creating blacklist object
     BlackList blackList = BlackList();
+    //adding first url
+    blackList.add("www.com");
+    //checking if it was added and if another one is not
+    ASSERT_EQ(blackList.doesExist("www.com"), true);
+    ASSERT_EQ(blackList.doesExist("www.com2"), false);
+    //adding it and checking again.
+    blackList.add("www.com2");
+    ASSERT_EQ(blackList.doesExist("www.com2"), true);
+}
+
+TEST(FilterTest, BasicTests) {
+    //creating filter object using static method.
+    Filter* filter = Filter::getInstance();
     //adding first url
     blackList.add("www.com");
     //checking if it was added and if another one is not

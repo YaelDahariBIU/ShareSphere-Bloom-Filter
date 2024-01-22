@@ -19,8 +19,7 @@ Filter* Filter::getInstance() {
 Filter* Filter::instancePtr = nullptr;
 
 void Filter::addURL(const string& url, const vector<int>& hashFuns) {
-    //adding ur t blacklist
-    //TODO:: not good!!!! need to check the url doesnt exist!
+    //adding url to blacklist
     blackList.add(url);
     size_t result;
     //going through the hash functions and lightning the wanted bit.
