@@ -8,6 +8,7 @@ Filter::Filter() {
 }
 
 Filter* Filter::getInstance() {
+    //creating first instance if its the first time initializing the bject
     if (instancePtr == nullptr) {
         instancePtr = new Filter();
     }
