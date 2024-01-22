@@ -32,12 +32,12 @@ void Filter::contains(const string& url, const vector<int>& hashFuns) {
         result = hashSet.getHashed(h, url);
         // if the filter doesn't contain the result
         if (!filter.isBitLit(result % filter.getSize())) {
-            cout << false;
+            cout << "false" << endl;
             return;
         }
-        cout << true;
-        cout << (blackList.doesExist(url));
     }
+    cout << "true ";
+    cout << (blackList.doesExist(url) ? "true" : "false") << endl;
 }
 
 int Filter::getHashSetSize() {
