@@ -6,7 +6,9 @@ BlackList::BlackList() {
 }
 
 void BlackList::add(const string& url) {
-    URLs.push_back(url);
+    if(!doesExist(url)) {
+        URLs.push_back(url);
+    }
 }
 
 bool BlackList::doesExist(const string& url) {
