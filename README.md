@@ -1,7 +1,7 @@
 # Facebook-Project
 
 ### Team Members:
-Tal Ariel Ziv
+Tal Ariel Ziv,
 Yael Dahari
 
 ### Project Overview:
@@ -65,8 +65,8 @@ Defines an interface for all commands.
 Implemented by AddUrlCommand and ContainsUrlCommand.
 
 ### Challenges and Solutions:
-#### Challenges: Coordinating code integration during the refactoring phase.
-#### Solutions: Regular communication and version control helped seamlessly merge individual contributions.
+Challenges: Coordinating code integration during the refactoring phase.
+Solutions: Regular communication and version control helped seamlessly merge individual contributions.
 
 ### Lessons Learned:
 Emphasized the importance of TDD for code reliability.
