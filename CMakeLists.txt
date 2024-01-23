@@ -35,7 +35,7 @@ set(SOURCE_FILES_TEST
 set(TEST_FILES
         # this is the main for tests
         # this file contains the tests
-        tests/test_main.cpp tests/input_test.cpp)      
+        tests/test_main.cpp tests/input_test.cpp tests/BFArrayTest.cpp)
 
 # source files
 set(BFARRAY_SRC_FILES

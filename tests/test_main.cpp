@@ -1,5 +1,4 @@
 #define TEST_BUILD
-#include "bloom_filter.cpp"
 #include <gtest/gtest.h>
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
