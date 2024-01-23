@@ -1,8 +1,0 @@
-//
-// Created by Tal on 12/01/2024.
-//
-
-#ifndef FACEBOOK_PROJECT_BLOOM_FILTER_H
-#define FACEBOOK_PROJECT_BLOOM_FILTER_H
-int main1();
-#endif //FACEBOOK_PROJECT_BLOOM_FILTER_H
