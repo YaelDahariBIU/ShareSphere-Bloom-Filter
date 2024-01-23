@@ -7,6 +7,19 @@ Yael Dahari
 ### Project Overview:
 The Bloom Filter project aimed to implement a space-efficient data structure for checking the presence of URLs in a blacklist. The primary focus was on adopting a Test-Driven Development (TDD) approach to ensure code reliability.
 
+### How to Build and Run the Docker using terminal:
+Open terminal at the project directory.
+In order to build the docker run: "sudo docker build -t facebook-like ."
+Don't forget to add the dot in the end!
+
+Then, run: "docker run -i -t facebook-like"
+
+Now, the program should start running and you can insert your input :)
+
+### Project Structure:
+Here is an illustration of our project using UML:
+![UML.jpg](media%2FUML.jpg)
+
 ### Workflow:
 #### Project Setup:
 
