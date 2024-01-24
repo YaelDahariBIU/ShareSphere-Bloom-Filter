@@ -9,7 +9,9 @@ The Bloom Filter project aimed to implement a space-efficient data structure for
 
 ### How to Build and Run the Docker using terminal:
 Download the repository to your computer.
+
 Open terminal at the project directory.
+
 In order to build the docker run: "sudo docker build -t facebook-like ."
 Don't forget to add the dot in the end!
 
