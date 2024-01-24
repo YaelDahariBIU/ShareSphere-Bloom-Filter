@@ -25,6 +25,9 @@ Now, the program should start running, and you can insert your input :)
 #### running command to run the execute file:
 ![runningPro.jpg](media%2FrunningPro.jpg)
 
+#### running on docker from terminal.
+![runningLatest.jpg](media%2FrunningLatest.jpg)
+
 ### Project Structure:
 Here is an illustration of our project using UML:
 ![UML.jpg](media%2FUML.jpg)
