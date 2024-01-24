@@ -8,19 +8,35 @@ Yael Dahari
 The Bloom Filter project aimed to implement a space-efficient data structure for checking the presence of URLs in a blacklist. The primary focus was on adopting a Test-Driven Development (TDD) approach to ensure code reliability.
 
 ### How to Build and Run the Docker using terminal:
+Download the repository to your computer.
+
 Open terminal at the project directory.
+
 In order to build the docker run: "sudo docker build -t facebook-like ."
 Don't forget to add the dot in the end!
 
 Then, run: "docker run -i -t facebook-like"
 
-Now, the program should start running and you can insert your input :)
+Now, the program should start running, and you can insert your input :)
+###  Proof of working docker image:
+#### downloading docker image to my own computer:
+![downloadDocker.jpg](media%2FdownloadDocker.jpg)
+
+#### running command to run the execute file:
+![runningPro.jpg](media%2FrunningPro.jpg)
 
 ### Project Structure:
 Here is an illustration of our project using UML:
 ![UML.jpg](media%2FUML.jpg)
 
 ### Workflow:
+
+#### Jira:
+Before we started working, we set up our project on Jira with a list of tasks 
+essential for the project's progression.
+this approach allowed us to establish a detailed project roadmap.
+After that, we split up the first jobs between us, marked them as "in progress" on Jira, and got to it. This helped us stay organized and made it easy to see who was working on what.
+
 #### Project Setup:
 
 Created a new GitHub repository and set up the project using CMakeLists.
