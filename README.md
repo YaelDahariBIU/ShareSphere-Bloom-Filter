@@ -21,6 +21,7 @@ Here is an illustration of our project using UML:
 ![UML.jpg](media%2FUML.jpg)
 
 ### Workflow:
+
 #### Jira:
 Before we started working, we set up our project on Jira with a list of tasks 
 essential for the project's progression.
