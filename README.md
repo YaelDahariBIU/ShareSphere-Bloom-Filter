@@ -17,7 +17,11 @@ Then, run: "docker run -i -t facebook-like"
 
 Now, the program should start running and you can insert your input :)
 ###  Proof of working docker image:
+#### downloading docker image to my own computer:
 ![downloadDocker.jpg](media%2FdownloadDocker.jpg)
+
+#### running command to run the execute file:
+![runningPro.jpg](media%2FrunningPro.jpg)
 
 ### Project Structure:
 Here is an illustration of our project using UML:
