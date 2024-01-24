@@ -17,7 +17,7 @@ Don't forget to add the dot in the end!
 
 Then, run: "docker run -i -t facebook-like"
 
-Now, the program should start running and you can insert your input :)
+Now, the program should start running, and you can insert your input :)
 ###  Proof of working docker image:
 #### downloading docker image to my own computer:
 ![downloadDocker.jpg](media%2FdownloadDocker.jpg)
