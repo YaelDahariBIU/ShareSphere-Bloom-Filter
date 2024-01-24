@@ -21,6 +21,13 @@ Here is an illustration of our project using UML:
 ![UML.jpg](media%2FUML.jpg)
 
 ### Workflow:
+
+#### Jira:
+Before we started working, we set up our project on Jira with a list of tasks 
+essential for the project's progression.
+this approach allowed us to establish a detailed project roadmap.
+After that, we split up the first jobs between us, marked them as "in progress" on Jira, and got to it. This helped us stay organized and made it easy to see who was working on what.
+
 #### Project Setup:
 
 Created a new GitHub repository and set up the project using CMakeLists.
