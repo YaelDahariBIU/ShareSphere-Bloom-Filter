@@ -9,7 +9,6 @@
 
 using namespace std;
 bool isInit = false;
-const char close_connection = '0';
 
 // Struct to hold arguments for handle_client function
 struct ClientArgs {
@@ -62,51 +61,6 @@ void *handle_client(void *arg)
     return NULL;
 }
 
-
-//void *handle_client(void *arg)
-//{
-//    string answer = "true";
-//    auto *args = (ClientArgs *)arg;
-//    int client_sock = args->client_sock;
-//    char buffer[4096];
-//    int read_bytes = recv(client_sock, buffer, sizeof(buffer), 0);
-//    if (read_bytes == 0)
-//    {
-//        // Connection is closed
-//    }
-//    else if (read_bytes < 0)
-//    {
-//        // Error
-//        perror("error receiving from client");
-//    }
-//    else
-//    {
-//        if (buffer[0] == close_connection) {
-//            close(client_sock);
-//            delete args;
-//            return NULL;
-//        }
-//        if (isInit) {
-//            if (!args->runner.execute(buffer)) {
-//                answer = "false";
-//            }
-//        }
-//        else {
-//            args->runner.init(buffer);
-//            isInit = true;
-//        }
-//
-//        int sent_bytes = send(client_sock, answer, answer.size(), 0);
-//        if (sent_bytes < 0)
-//        {
-//            perror("error sending to client");
-//        }
-//    }
-//
-//    //close(client_sock);
-//    delete args;
-//    return NULL;
-//}
 
 int main()
 {
