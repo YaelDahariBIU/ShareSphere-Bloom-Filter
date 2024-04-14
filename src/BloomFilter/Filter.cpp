@@ -18,7 +18,7 @@ Filter* Filter::getInstance() {
 // initializing instancePtr with NULL
 Filter* Filter::instancePtr = nullptr;
 
-void Filter::addURL(const string& url, const vector<int>& hashFuns) {
+bool Filter::addURL(const string& url, const vector<int>& hashFuns) {
     //adding url to blacklist
     blackList.add(url);
     size_t result;
@@ -28,9 +28,10 @@ void Filter::addURL(const string& url, const vector<int>& hashFuns) {
         result = hashSet.getHashed(h, url);
         filter.litBit(result % filter.getSize());
     }
+    return true;
 }
 
-void Filter::contains(const string& url, const vector<int>& hashFuns) {
+bool Filter::contains(const string& url, const vector<int>& hashFuns) {
     size_t result;
     //going through all hash functions and checking if the bit is lit.
     //if one bit was not up, print false. if all are lit, check if its in the
@@ -39,12 +40,10 @@ void Filter::contains(const string& url, const vector<int>& hashFuns) {
         result = hashSet.getHashed(h, url);
         // if the filter doesn't contain the result
         if (!filter.isBitLit(result % filter.getSize())) {
-            cout << "false" << endl;
-            return;
+            return false;
         }
     }
-    cout << "true ";
-    cout << (blackList.doesExist(url) ? "true" : "false") << endl;
+    return blackList.doesExist(url);
 }
 
 int Filter::getHashSetSize() {

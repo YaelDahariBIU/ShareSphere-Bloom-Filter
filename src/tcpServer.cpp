@@ -5,12 +5,23 @@
 #include <unistd.h>
 #include <string.h>
 #include <pthread.h>
+#include "BFApp/Runner.h"
 
 using namespace std;
+bool isInit = false;
+const char close_connection = '0';
+
+// Struct to hold arguments for handle_client function
+struct ClientArgs {
+    int client_sock;
+    Runner runner;
+};
 
 void *handle_client(void *arg)
 {
-    int client_sock = *((int *)arg);
+    string answer = "true";
+    auto *args = (ClientArgs *)arg;
+    int client_sock = args->client_sock;
     char buffer[4096];
     int read_bytes = recv(client_sock, buffer, sizeof(buffer), 0);
     if (read_bytes == 0)
@@ -24,17 +35,29 @@ void *handle_client(void *arg)
     }
     else
     {
+        if (buffer[0] == close_connection) {
+            close(client_sock);
+            return NULL;
+        }
+        if (isInit) {
+            if (!args->runner.execute(buffer)) {
+                answer = "false";
+            }
+        }
+        else {
+            args->runner.init(buffer);
+            isInit = true;
+        }
 
-        cout << buffer;
-        int sent_bytes = send(client_sock, buffer, read_bytes, 0);
+        int sent_bytes = send(client_sock, answer, answer.size(), 0);
         if (sent_bytes < 0)
         {
             perror("error sending to client");
         }
     }
 
-    close(client_sock);
-    delete (int *)arg;
+    //close(client_sock);
+    delete args;
     return NULL;
 }
 
@@ -68,6 +91,8 @@ int main()
         return 1;
     }
 
+    Runner runner = Runner();
+
     while (true)
     {
         struct sockaddr_in client_sin;
@@ -81,8 +106,14 @@ int main()
             continue;
         }
 
+        // Create arguments struct
+        auto *args = new ClientArgs;
+        args->client_sock = *client_sock;
+        args->runner = runner;
+
         pthread_t tid;
-        if (pthread_create(&tid, NULL, handle_client, (void *)client_sock) != 0)
+
+        if (pthread_create(&tid, NULL, handle_client, (void *)args) != 0)
         {
             perror("error creating thread");
             delete client_sock;

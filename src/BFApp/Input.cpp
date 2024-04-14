@@ -24,9 +24,7 @@ vector<string> subWords(istringstream &sentence) {
 
 /** this function has a recursive call, calling the function again and again
 until getting the input as wanted. **/
-void Input::init() noexcept {
-    string line;
-    getline(cin, line);
+void Input::init(const string& line) noexcept {
     istringstream sentence(line);
     vector<int> nums;
     int n, first = true;
@@ -37,7 +35,7 @@ void Input::init() noexcept {
         try {
             n = stoi(s);
         } catch (exception& e) {
-            init(); return;
+            return;
         }
         // the first number is the size, so we set it.
         if (first && n > INVALID) {
@@ -46,7 +44,7 @@ void Input::init() noexcept {
         }
         // if the input is invalid (bigger than hashFuns or negative)
         else if (n > numOfHashFuns || n <= INVALID) {
-            init(); return;
+            return;
         }
         // preventing duplicates in nums.
         else if (find(nums.begin(), nums.end(), n) == nums.end()) {
@@ -54,19 +52,17 @@ void Input::init() noexcept {
         }
     }
     // dealing with nums being empty - otherwise setting hashFuns
-    nums.empty() ? init() : setHashFuns(nums);
+    setHashFuns(nums);
 }
 
 /** this function reads a line, divides it to words and make sure the number
  * of words is 2. otherwise calls recursively **/
-vector<string> Input::getNext() {
-    string line;
-    getline(cin, line);
+vector<string> Input::getNext(const string& line) {
     istringstream sentence(line);
     vector<string> words = subWords(sentence);
-    if (words.size() != MAX_ARGS) {
-        return getNext();
-    }
+//    if (words.size() != MAX_ARGS) {
+//        return getNext();
+//    }
     return words;
 }
 

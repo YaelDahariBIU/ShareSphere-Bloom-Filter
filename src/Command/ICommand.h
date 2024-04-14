@@ -9,7 +9,7 @@ using namespace std;
  * will make it happen.**/
 class ICommand {
 public:
-    virtual void execute(string url, vector<int> hashFuns) = 0;
+    virtual bool execute(string url, vector<int> hashFuns) = 0;
 };
 
 

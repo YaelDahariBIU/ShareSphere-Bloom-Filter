@@ -14,7 +14,8 @@ public:
     map<string, ICommand*> commands;
     Input input;
     Runner();
-    void run();
+    bool execute(const string& line);
+    void init(const string& line);
 };
 
 

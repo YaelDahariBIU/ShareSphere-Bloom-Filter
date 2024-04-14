@@ -26,8 +26,8 @@ public:
     Input();
 
     vector<int> getHashFuns();
-    void init() noexcept;
-    vector<string> getNext();
+    void init(const string& line) noexcept;
+    vector<string> getNext(const string& line);
     int getSize() const;
 };
 

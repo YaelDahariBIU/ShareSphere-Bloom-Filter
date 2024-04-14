@@ -9,7 +9,7 @@ using namespace std;
  * **/
 class AddURLCommand : public ICommand {
 public:
-    void execute(string url, vector<int> hashFuns) override;
+    bool execute(string url, vector<int> hashFuns) override;
 };
 
 
