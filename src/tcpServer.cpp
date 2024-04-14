@@ -19,26 +19,26 @@ struct ClientArgs {
 
 void *handle_client(void *arg)
 {
-    string answer = "true";
-    auto *args = (ClientArgs *)arg;
+    ClientArgs *args = (ClientArgs *)arg;
     int client_sock = args->client_sock;
+    string answer = "true";
+
     char buffer[4096];
-    int read_bytes = recv(client_sock, buffer, sizeof(buffer), 0);
-    if (read_bytes == 0)
-    {
-        // Connection is closed
-    }
-    else if (read_bytes < 0)
-    {
-        // Error
-        perror("error receiving from client");
-    }
-    else
-    {
-        if (buffer[0] == close_connection) {
-            close(client_sock);
-            return NULL;
+    int read_bytes;
+
+    // Continue to receive messages until the client sends the "close" message
+    while ((read_bytes = recv(client_sock, buffer, sizeof(buffer), 0)) > 0) {
+        buffer[read_bytes] = '\0'; // Null-terminate the received data
+        cout << "Received message from client: " << buffer << endl;
+
+        // Check if the received message is the "close" message
+        if (strcmp(buffer, "close") == 0)
+        {
+            cout << "Closing connection with client." << endl;
+            break; // Exit the loop and close the connection
         }
+
+        // execute and return the answer to the client
         if (isInit) {
             if (!args->runner.execute(buffer)) {
                 answer = "false";
@@ -53,13 +53,60 @@ void *handle_client(void *arg)
         if (sent_bytes < 0)
         {
             perror("error sending to client");
+            break;
         }
     }
 
-    //close(client_sock);
+    close(client_sock);
     delete args;
     return NULL;
 }
+
+
+//void *handle_client(void *arg)
+//{
+//    string answer = "true";
+//    auto *args = (ClientArgs *)arg;
+//    int client_sock = args->client_sock;
+//    char buffer[4096];
+//    int read_bytes = recv(client_sock, buffer, sizeof(buffer), 0);
+//    if (read_bytes == 0)
+//    {
+//        // Connection is closed
+//    }
+//    else if (read_bytes < 0)
+//    {
+//        // Error
+//        perror("error receiving from client");
+//    }
+//    else
+//    {
+//        if (buffer[0] == close_connection) {
+//            close(client_sock);
+//            delete args;
+//            return NULL;
+//        }
+//        if (isInit) {
+//            if (!args->runner.execute(buffer)) {
+//                answer = "false";
+//            }
+//        }
+//        else {
+//            args->runner.init(buffer);
+//            isInit = true;
+//        }
+//
+//        int sent_bytes = send(client_sock, answer, answer.size(), 0);
+//        if (sent_bytes < 0)
+//        {
+//            perror("error sending to client");
+//        }
+//    }
+//
+//    //close(client_sock);
+//    delete args;
+//    return NULL;
+//}
 
 int main()
 {
