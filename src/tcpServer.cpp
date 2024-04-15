@@ -28,6 +28,7 @@ void *handle_client(void *arg)
 
     // Continue to receive messages until the client sends the "close" message
     while ((read_bytes = recv(client_sock, buffer, sizeof(buffer), 0)) > 0) {
+        strcpy(answer, "true");
         buffer[read_bytes] = '\0'; // Null-terminate the received data
         cout << "Received message from client: " << buffer << endl;
 
@@ -40,8 +41,9 @@ void *handle_client(void *arg)
 
         // execute and return the answer to the client
         if (isInit) {
-            if (!args->runner.execute(buffer)) {
+            if (args->runner.execute(buffer)) {
                 strcpy(answer, "false");
+                cout << "Found bad!!!!!" << endl;
             }
         }
         else {
@@ -94,7 +96,6 @@ int main()
     }
 
     Runner runner = Runner();
-    runner.execute();
 
     while (true)
     {
