@@ -20,7 +20,8 @@ void *handle_client(void *arg)
 {
     ClientArgs *args = (ClientArgs *)arg;
     int client_sock = args->client_sock;
-    string answer = "true";
+    char answer[6] = {};
+    strcpy(answer, "true");
 
     char buffer[4096];
     int read_bytes;
@@ -40,7 +41,7 @@ void *handle_client(void *arg)
         // execute and return the answer to the client
         if (isInit) {
             if (!args->runner.execute(buffer)) {
-                answer = "false";
+                strcpy(answer, "false");
             }
         }
         else {
@@ -48,7 +49,7 @@ void *handle_client(void *arg)
             isInit = true;
         }
 
-        int sent_bytes = send(client_sock, answer, answer.size(), 0);
+        int sent_bytes = send(client_sock, (void *)answer, sizeof(answer), 0);
         if (sent_bytes < 0)
         {
             perror("error sending to client");
@@ -93,6 +94,7 @@ int main()
     }
 
     Runner runner = Runner();
+    runner.execute();
 
     while (true)
     {
