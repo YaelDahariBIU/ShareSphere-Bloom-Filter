@@ -21,24 +21,24 @@ Runner::Runner() {
     commands["2"] = containsURL;
 }
 
-void Runner::run() {
+void Runner::init(const string& line) {
     //getting first input, size of bloom filter and the hash functions we use.
-    input.init();
+    input.init(line);
     int size = input.getSize();
     Filter* filter = Filter::getInstance();
     filter->setSize(size);
+}
+
+bool Runner::execute(const string& line) {
     //reading command (1 or 2) and string url from the user.
     vector<string> command;
     string task, url;
-    //running for-ever because the bloom filter is always working
-    while(true) {
         //getting input from the user.
-        command = input.getNext();
+        command = input.getNext(line);
         //if the command exists in the map, execute.
         if (commands[command.at(TASK)]) {
-            commands[command.at(TASK)]->execute(command.at(URL), input.getHashFuns());
+            return commands[command.at(TASK)]->execute(command.at(URL), input.getHashFuns());
         }
-    }
 }
 
 

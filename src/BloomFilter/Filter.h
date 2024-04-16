@@ -27,9 +27,9 @@ public:
     //returning the same instance.
     static Filter* getInstance();
     //adding url
-    void addURL(const string& url, const vector<int>& hashFuns);
+    bool addURL(const string& url, const vector<int>& hashFuns);
     //checking if the url is in the vector
-    void contains(const string& url, const vector<int>& hashFuns);
+    bool contains(const string& url, const vector<int>& hashFuns);
     //get size of hashset
     int getHashSetSize();
     //creating a new bloom filter array with the size the user requested.

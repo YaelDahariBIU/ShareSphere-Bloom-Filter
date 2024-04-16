@@ -8,7 +8,7 @@
  * allowing polymorphism **/
 class ContainsURLCommand : public ICommand {
 public:
-    void execute(string url, vector<int> hashFuns) override;
+    bool execute(string url, vector<int> hashFuns) override;
 };
 
 

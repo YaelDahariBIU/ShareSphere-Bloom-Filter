@@ -1,7 +1,6 @@
 #include "BFApp/Runner.h"
 
-int main() {
+int main1() {
     Runner runner = Runner();
-    runner.run();
     return 0;
 }

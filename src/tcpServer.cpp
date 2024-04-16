@@ -5,38 +5,65 @@
 #include <unistd.h>
 #include <string.h>
 #include <pthread.h>
+#include "BFApp/Runner.h"
 
 using namespace std;
+bool isInit = false;
+
+// Struct to hold arguments for handle_client function
+struct ClientArgs {
+    int client_sock;
+    Runner runner;
+};
 
 void *handle_client(void *arg)
 {
-    int client_sock = *((int *)arg);
-    char buffer[4096];
-    int read_bytes = recv(client_sock, buffer, sizeof(buffer), 0);
-    if (read_bytes == 0)
-    {
-        // Connection is closed
-    }
-    else if (read_bytes < 0)
-    {
-        // Error
-        perror("error receiving from client");
-    }
-    else
-    {
+    ClientArgs *args = (ClientArgs *)arg;
+    int client_sock = args->client_sock;
+    char answer[6] = {};
+    strcpy(answer, "true");
 
-        cout << buffer;
-        int sent_bytes = send(client_sock, buffer, read_bytes, 0);
+    char buffer[4096];
+    int read_bytes;
+
+    // Continue to receive messages until the client sends the "close" message
+    while ((read_bytes = recv(client_sock, buffer, sizeof(buffer), 0)) > 0) {
+        strcpy(answer, "true");
+        buffer[read_bytes] = '\0'; // Null-terminate the received data
+        cout << "Received message from client: " << buffer << endl;
+
+        // Check if the received message is the "close" message
+        if (strcmp(buffer, "close") == 0)
+        {
+            cout << "Closing connection with client." << endl;
+            break; // Exit the loop and close the connection
+        }
+
+        // execute and return the answer to the client
+        if (isInit) {
+            if (args->runner.execute(buffer)) {
+                strcpy(answer, "false");
+                cout << "Found bad!!!!!" << endl;
+            }
+        }
+        else {
+            args->runner.init(buffer);
+            isInit = true;
+        }
+
+        int sent_bytes = send(client_sock, (void *)answer, sizeof(answer), 0);
         if (sent_bytes < 0)
         {
             perror("error sending to client");
+            break;
         }
     }
 
     close(client_sock);
-    delete (int *)arg;
+    delete args;
     return NULL;
 }
+
 
 int main()
 {
@@ -68,6 +95,8 @@ int main()
         return 1;
     }
 
+    Runner runner = Runner();
+
     while (true)
     {
         struct sockaddr_in client_sin;
@@ -81,8 +110,14 @@ int main()
             continue;
         }
 
+        // Create arguments struct
+        auto *args = new ClientArgs;
+        args->client_sock = *client_sock;
+        args->runner = runner;
+
         pthread_t tid;
-        if (pthread_create(&tid, NULL, handle_client, (void *)client_sock) != 0)
+
+        if (pthread_create(&tid, NULL, handle_client, (void *)args) != 0)
         {
             perror("error creating thread");
             delete client_sock;

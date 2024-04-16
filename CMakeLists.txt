@@ -21,7 +21,7 @@ set(SOURCE_FILES
         src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h src/BloomFilter/BlackList.cpp
         src/BloomFilter/BlackList.h src/BloomFilter/BloomFilterArray.cpp src/BloomFilter/BloomFilterArray.h
         src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h
-        src/Hash/HashOne.h src/Hash/HashOne.cpp src/Hash/IHash.h)
+        src/Hash/HashOne.h src/Hash/HashOne.cpp src/Hash/IHash.h src/tcpServer.cpp)
 
 set(SOURCE_FILES_TEST
         # this is where the code we want to test
@@ -29,7 +29,7 @@ set(SOURCE_FILES_TEST
         src/Hash/IHash.h src/Hash/HashOne.cpp src/Hash/HashOne.h src/BloomFilter/BlackList.cpp
         src/BloomFilter/BlackList.h src/BloomFilter/BloomFilterArray.cpp src/BloomFilter/BloomFilterArray.h
         src/Hash/HashTwo.cpp src/Hash/HashTwo.h src/Hash/HashSet.cpp src/Hash/HashSet.h src/BloomFilter/Filter.cpp src/BloomFilter/Filter.h
-        src/Hash/HashOne.h src/Hash/HashOne.cpp src/Hash/IHash.h)
+        src/Hash/HashOne.h src/Hash/HashOne.cpp src/Hash/IHash.h src/tcpServer.cpp)
 
 # Test files
 set(TEST_FILES
