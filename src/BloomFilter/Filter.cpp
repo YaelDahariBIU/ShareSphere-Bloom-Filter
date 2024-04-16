@@ -28,7 +28,7 @@ bool Filter::addURL(const string& url, const vector<int>& hashFuns) {
         result = hashSet.getHashed(h, url);
         filter.litBit(result % filter.getSize());
     }
-    return true;
+    return false;
 }
 
 bool Filter::contains(const string& url, const vector<int>& hashFuns) {
