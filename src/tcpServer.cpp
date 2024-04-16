@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <pthread.h>
+#include <arpa/inet.h>
 #include "BFApp/Runner.h"
 
 using namespace std;
@@ -68,6 +69,7 @@ void *handle_client(void *arg)
 int main()
 {
     const int server_port = 5555;
+    const char * server_ip = "127.0.0.1";
     int sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0)
     {
@@ -78,7 +80,7 @@ int main()
     struct sockaddr_in sin;
     memset(&sin, 0, sizeof(sin));
     sin.sin_family = AF_INET;
-    sin.sin_addr.s_addr = INADDR_ANY;
+    sin.sin_addr.s_addr = inet_addr(server_ip);
     sin.sin_port = htons(server_port);
 
     if (bind(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
