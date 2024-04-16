@@ -4,6 +4,5 @@ WORKDIR /usr/src/facebook-like
 
 COPY ./src/ .
 
-RUN g++ -o facebook-like ./BFApp/* ./BloomFilter/* ./Command/* ./Hash/* ./main.cpp
-
+RUN g++ -o facebook-like ./BFApp/* ./BloomFilter/* ./Command/* ./Hash/* ./tcpServer.cpp
 CMD ["./facebook-like"]
